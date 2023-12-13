@@ -11,6 +11,7 @@ import LoginUsuario from './core/usuario/service/LoginUsuario'
 import ObterProdutoPorId from './core/produto/service/ObterProdutoPorId'
 import ObterProdutoPorIdControllerController from './external/api/ObterProdutoPorIdController'
 import UsuarioMiddleware from './external/api/UsuarioMiddleware'
+import PgPromiseAdapter from './external/database/PgPromiseAdapter'
 
 const app = express()
 const porta = process.env.API_PORT ?? 4000
@@ -20,7 +21,8 @@ app.listen(porta, () => {
     console.log(`🔥 Servidor rodando na 🚪 ${porta}`)
 })
 
-const repositorioUsuario = new RepositorioUsuarioPg()
+const db = new PgPromiseAdapter()
+const repositorioUsuario = new RepositorioUsuarioPg(db)
 const provedorCripto = new SenhaCripto()
 const registrarUsuario = new RegistrarUsuario(repositorioUsuario, provedorCripto)
 
