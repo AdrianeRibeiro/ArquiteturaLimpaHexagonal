@@ -1,6 +1,6 @@
 import LoginUsuario from "@/core/usuario/service/LoginUsuario";
 import { Express } from 'express'
-import ProvedorJwt from "./ProvedorJwt";
+import ProvedorJwt from "../auth/ProvedorJwt";
 
 export default class LoginUsuarioController {
     constructor(

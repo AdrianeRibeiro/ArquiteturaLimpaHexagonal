@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express"
-import ProvedorJwt from "./ProvedorJwt"
+import ProvedorJwt from "../auth/ProvedorJwt"
 import Usuario from "@/core/usuario/model/Usuario"
 import RepositorioUsuario from "@/core/usuario/service/RepositorioUsuario"
 

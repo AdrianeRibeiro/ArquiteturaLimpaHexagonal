@@ -1,5 +1,5 @@
 import { Express } from 'express'
-import ProvedorJwt from "./ProvedorJwt";
+import ProvedorJwt from "../auth/ProvedorJwt";
 import ObterProdutoPorId from "@/core/produto/service/ObterProdutoPorId";
 
 export default class ObterProdutoPorIdControllerController {
