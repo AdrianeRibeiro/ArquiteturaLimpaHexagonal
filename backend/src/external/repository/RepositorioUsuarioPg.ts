@@ -3,7 +3,6 @@ import Usuario from "../../core/usuario/model/Usuario";
 export default class RepositorioUsuarioPg {
     constructor(readonly db: any) {}
 
-    
     async inserir(usuario: Usuario) {
         await this.db.query(
             `insert into usuarios
